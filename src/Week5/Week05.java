@@ -52,6 +52,7 @@ class GFG
         }
 
         //boolean wantToRemoveSong = removeSong();
+    //Removing a song
         if (removeSong() == false){
             int songNumber = NoOfSongs +1;
             while (songNumber< NoOfSongs) {
@@ -60,8 +61,10 @@ class GFG
                 songNumber = songNumber - 1;
                 arr[songNumber].display();
             }
-            int numberOfSong = InputReader.getInt("What song number do you want to remove?");
-            arr[numberOfSong-1] = new Songs(0, "");
+            //int numberOfSong = InputReader.getInt("What song number do you want to remove?");
+            int fixedNumberOfSong= numberOfRemovedSong();
+            arr[fixedNumberOfSong] = null;
+
         }
         else {
 
@@ -71,6 +74,10 @@ class GFG
         int songNumber = 0;
         while (songNumber<NoOfSongs) {
             songNumber = songNumber + 1;
+            int fixedNumberOfSong = 5;
+
+            if(songNumber == fixedNumberOfSong) continue;
+                System.out.print(songNumber +" ");
             System.out.println("Song " + songNumber+":");
             arr[songNumber-1].display();
         }
@@ -106,7 +113,12 @@ class GFG
 
         return wantToAddSong;
     }
-
+    public static int numberOfRemovedSong()
+    {
+        int numberOfSong = InputReader.getInt("What song number do you want to remove?");
+        int fixedSongNumber = numberOfSong-1;
+        return fixedSongNumber;
+    }
 }
 
 
@@ -130,7 +142,9 @@ class Songs {
     // the Songs data
     public void display()
     {
+
         System.out.println("Song name: " + songName + "\n" + "Amount of times played: " + numberOfPlays);
         System.out.println();
+
     }
 }
