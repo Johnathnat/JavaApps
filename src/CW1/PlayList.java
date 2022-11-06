@@ -3,9 +3,11 @@ import helpers.InputReader;
 import java.io.*;
 import java.lang.*;
 import java.util.*;
+
+/**Main class*/
 public class PlayList
 {
-    // Declaring an array of Songs
+    /** Declaring an array of Songs*/
     private Song[] songs;
 
     public void run()
@@ -27,25 +29,32 @@ public class PlayList
         removeSongs();
         printList();
     }
-    // Function to add x in arr
-//    public static int[] addX(int n, int songs[], int x)
-//    {
-//        int i;
-//
-//        // create a new array of size n+1
-//        int newarr[] = new int[n + 1];
-//
-//        // insert the elements from
-//        // the old array into the new array
-//        // insert all elements till n
-//        // then insert x at n+1
-//        for (i = 0; i < n; i++)
-//            newarr[i] = songs[i];
-//
-//        newarr[n] = x;
-//
-//        return newarr;
-   // }
+    
+    
+    
+/**   
+This was some code I found to try and add the songs to the array but it didnt end up working
+
+      Function to add x in arr
+      public static int[] addX(int n, int songs[], int x)
+      {
+          int i;
+  
+          // create a new array of size n+1
+          int newarr[] = new int[n + 1];
+  
+          // insert the elements from
+          // the old array into the new array
+          // insert all elements till n
+          // then insert x at n+1
+          for (i = 0; i < n; i++)
+              newarr[i] = songs[i];
+  
+          newarr[n] = x;
+  
+          return newarr;
+     }
+     */
     private void addSongs() {
         /**
           User added song
@@ -61,7 +70,8 @@ public class PlayList
         //songs = addX(addedsong);
 
     }
-
+/**This was an attempt to be able to cound the amount of songs in the List but for some
+reason.*/
     private int getLastSong()
     {
         int count = 0;
@@ -74,7 +84,7 @@ public class PlayList
         }
         return count;
     }
-    //boolean wantToRemoveSong = removeSong();
+    
     /**
      * Removing a song
     */
