@@ -105,10 +105,19 @@ public class PlayList
             songNumber = songNumber - 1;
             arr[songNumber].display();
         }
+        boolean NOSInputCheck = false;
         int numberOfSong = InputReader.getInt("What song number do you want to remove?");
-        int fixedNumberOfSong= numberOfRemovedSong();
-        arr[fixedNumberOfSong] = null;
+        while(!NOSInputCheck) {
 
+            if (numberOfSong < 0) {
+                System.out.println("\n Invalid choice try again!\n");
+
+            } 
+            else NOSInputCheck = true;
+            int fixedNumberOfSong = numberOfRemovedSong();
+            arr[fixedNumberOfSong] = null;
+        }
+    
 
         return false;
     }
@@ -132,7 +141,7 @@ public class PlayList
             else NOPInputCheck = true;
                 arr[arr.length-1] = new Song(newNumberOfPlays, newSongName, newArtistName);
                 printList();
-
+    
         }
 
 
@@ -202,5 +211,4 @@ public class PlayList
 
 
 
-/**In the friday practical sessing David helped me with some of the problems I was having with my code but it then turned out there was alot more wrong with it but in trying to fix it it was then unusable by me so I found a early verstion of my code on my home compluter.
-This was a preivous working vertion of my code that I used to do the testing but I ran out of time to fully compleate it */
+
